@@ -1,0 +1,82 @@
+Lorrie and Matt are best friends. They spend a lot of time together finding about prime numbers and their usage, and powers. Now, they've managed to find out about a new type of number called the: dual numbers.
+
+The dual numbers are special numbers which are produced when two prime numbers are selected and multiplied. For example,
+4
+4 is a dual number, since it is the product of 2 prime numbers, 2 and 2. Similarly,
+6
+6 is also a dual number, since it is the product of 2 and 3. But,
+8
+8 is not a dual number, since it is not the product of any two prime numbers.
+
+Now Lorrie and Matt are given an array consisting of
+N
+N numbers. The numbers can be arbitrary positive integers. Lorrie and Matt will each independently choose a prime number in the array (their choice of numbers does not necessarily have to be distinct). Then, they will take their choices and multiply them to form a dual number. You're supposed to help them out by finding out the maximum dual number which they can create from this process. If any dual number cannot be generated from the given array, output
+−
+1
+−1.
+
+Input format:
+The first line consists of a number 
+t
+t, which denotes the number of test cases. For every test case, there will be two lines. On the first line, there'll be a number
+n
+n, denoting the size of the array. On the second line will be
+n
+n positive integers
+a
+1
+,
+a
+2
+,
+…
+,
+a
+n
+a1,a2,…,an separated by a space.
+
+Output format:
+For every test case, you have to print the maximum dual number which can be formed by the given array. In case this is NOT possible, print
+−
+1
+−1.
+
+Constraints:
+ 1
+1 ≤
+t
+t ≤
+100
+100
+ 1
+1 ≤
+n
+n ≤
+10
+3
+103
+ 1
+1 ≤
+a
+i
+ai ≤
+10
+3
+103
+
+SAMPLE INPUT
+3
+5
+1 4 6 8 10
+3
+2 2 9
+2
+156 13
+SAMPLE OUTPUT
+-1
+4
+169
+Explanation
+In the first case, there are no prime numbers to multiply, so the answer is -1.
+In the second case, Lorrie and Matt can both select 2 to multiply, so the answer is 4.
+In the third case, Lorrie and Matt can both select 13.

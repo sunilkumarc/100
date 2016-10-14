@@ -1,11 +1,8 @@
-arr = [4, 9, 0, 1]
-# arr = [1, 2, 0, 9]
+arr = [1, 2, 0, 9, 4, 5, -1, 18, -3, 3]
 
 def merge(arr, low, mid, high):
-    temp1 = arr[low:(mid-low)+1]
+    temp1 = arr[low:mid+1]
     temp2 = arr[mid+1:high+1]
-    print(temp1)
-    print(temp2)
     i = 0
     j = 0
     k = low
@@ -36,10 +33,8 @@ def mergeSort(arr, low, high):
         merge(arr, low, mid, high)
 
 if __name__ == '__main__':
-    print(arr)
+    print('Before: ', arr)
     low = 0
     high = len(arr) - 1
-    mid = int(low + (high-low)/2)
-    # merge(arr, low, mid, high)
     mergeSort(arr, low, high)
-    print(arr)
+    print('After:  ', arr)

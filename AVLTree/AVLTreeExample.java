@@ -48,7 +48,7 @@ class AVLTree {
 	}
 
 	boolean find(int value) {
-		Node node = search(root,value);
+		Node node = search(root, value);
 
 		if (node == null)
 			return false;
@@ -150,6 +150,24 @@ class AVLTree {
 		preorder(root);
 		System.out.println();
 	}
+
+	void printGivenLevel(Node root, int height) {
+		if (root == null)
+			return;
+
+		if (height == 1)
+			System.out.print(root.key + " ");
+		else {
+			printGivenLevel(root.left, height-1);
+			printGivenLevel(root.right, height-1);
+		}
+	}
+
+	void levelOrderTraversal() {
+		for (int height = 1; height <= findHeight(); ++height) {
+			printGivenLevel(root, height);
+		}
+	}
 }
 
 public class AVLTreeExample {
@@ -162,8 +180,10 @@ public class AVLTreeExample {
 		avl.insert(50);
 		avl.insert(25);
 
-		System.out.print("Inorder Traversal : "); avl.inorderTraversal();
-		System.out.print("Preorder Traversal : "); avl.preorderTraversal();
+		System.out.print("Inorder Traversal : ");
+		avl.inorderTraversal();
+		System.out.print("Preorder Traversal : ");
+		avl.preorderTraversal();
 		System.out.println("Searching for 10 : " + avl.find(10));
 		System.out.println("Searching for 11 : " + avl.find(11));
 		System.out.println("Searching for 20 : " + avl.find(20));
@@ -171,5 +191,7 @@ public class AVLTreeExample {
 		System.out.println("Finding height from 10 : " + avl.findHeightFrom(10));
 		System.out.println("Finding height from 20 : " + avl.findHeightFrom(20));
 		System.out.println("Finding height from 25 : " + avl.findHeightFrom(25));
+
+		avl.levelOrderTraversal();
 	}
 }

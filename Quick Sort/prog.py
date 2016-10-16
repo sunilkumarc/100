@@ -1,3 +1,9 @@
+# Resources:
+# ==========
+#
+# Geeks For Geeks: http://quiz.geeksforgeeks.org/quick-sort/
+# Video: https://www.youtube.com/watch?v=aQiWF4E8flQ
+
 arr = list(map(int, input().strip().split(' ')))
 print('Before :', arr)
 

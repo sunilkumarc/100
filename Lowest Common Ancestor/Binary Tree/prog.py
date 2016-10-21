@@ -1,3 +1,6 @@
+# Implementation based on the below source
+# http://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/
+
 class Node():
     def __init__(self, val):
         self.key = val
@@ -148,6 +151,6 @@ if __name__ == '__main__':
     # Assuming both the elements are present in the tree
     print('Lowest Common Ancestor assuming both keys exist - ', bt.lowestCommonAncestor2(4, 7))
 
-    # Third wasy
+    # Third way
     # Similar to second one. But doesn't assume both the keys are present in the tree
     print('Lowest Common Ancestor with no assumptions - ', bt.lowestCommonAncestor3(4, 7))

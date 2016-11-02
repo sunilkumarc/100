@@ -233,3 +233,46 @@
 	Collections -> class, to sort collection elements. Collections.sort(...)
 
 68. hashCode and equals method -> https://www.youtube.com/watch?v=fAlRR2p9Le0
+
+69. MultiThreading in java
+	MultiTasking
+		- MultiThreading
+			- different threads inside a single process
+			- different threads share same address space
+			- so communication between threads is easier
+			- light weight
+		- MultiProcessing
+			- heavy weight
+			- context switching between processes is costly since it needs registers to be reloaded
+			- communication between processes is costly
+			- do not share address space
+
+	Thread states
+		New
+		Runnable
+		Running
+		Not runnable/blocked
+		Terminated
+
+	inter-thread communication
+		wait, notify, notifyAll
+
+	inter-process communication
+		message queues
+		pipes
+		shared memory
+		message passing
+		socket
+		file
+
+	Why 2 ways to create threads -> you can extend only 1 class in java but implement multiple interfaces.
+
+70. Nested Classes
+
+71. Garbage Collection - Using mark and sweetp algorithm
+	System.gc()
+	finalize of the class will be called before garbage collected
+
+	Mark and Sweep
+		- traverse all the object references and mark them as alive
+		- delete all the memory locations that are not acquired by any marked object

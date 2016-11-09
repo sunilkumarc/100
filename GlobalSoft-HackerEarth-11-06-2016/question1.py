@@ -1,3 +1,10 @@
+# This should be solved using Kruskal's Algorithm.
+# Not able to understand this algorithm completely.
+# This problem will be solved later
+# Links :   https://github.com/israelst/Algorithms-Book--Python/blob/master/5-Greedy-algorithms/kruskal.py
+#           https://www.hackerearth.com/practice/algorithms/graphs/minimum-spanning-tree/tutorial/
+#           https://www.youtube.com/watch?v=5xosHRdxqHA
+
 N, M = map(int, input().strip().split())
 latencies = []
 newCables = []

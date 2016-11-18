@@ -1,3 +1,5 @@
+// http://www.geeksforgeeks.org/print-all-prime-factors-and-their-powers/
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

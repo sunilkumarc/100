@@ -41,13 +41,30 @@ class Tree {
 	void inorderTraversal(Node root) {
 		if (root != null) {
 			inorderTraversal(root.left);
-			System.out.println(root.data);
+			System.out.print(root.data + " ");
 			inorderTraversal(root.right);
 		}
 	}
 
 	void inorder() {
 		this.inorderTraversal(this.nodes.get(1));
+		System.out.println();
+	}
+
+	void swap(Node root, int depth) {
+		if (depth == 1) {
+			Node temp;
+			temp = root.left;
+			root.left = root.right;
+			root.right = temp;
+		} else {
+			swap(root.left, depth-1);
+			swap(root.right, depth-1);
+		}
+	}
+
+	void swapAtDepth(int depth) {
+		swap(this.nodes.get(1), depth);
 	}
 }
 
@@ -58,7 +75,7 @@ public class Solution1 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine().trim());
 		String [] line;
-		int left, right;
+		int left, right, T;
 
 		if (N > 0) {
 			Tree tree = new Tree(N);
@@ -71,7 +88,13 @@ public class Solution1 {
 				tree.insert(index, left, right);
 			}
 
-			tree.inorder();
+			T = Integer.parseInt(br.readLine().trim());
+			for (int i = 0; i < T; ++i) {
+
+				int depth = Integer.parseInt(br.readLine().trim());
+				tree.swapAtDepth(depth);
+				tree.inorder();
+			}
 		}
 	}
 }

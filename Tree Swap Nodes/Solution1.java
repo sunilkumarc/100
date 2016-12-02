@@ -53,20 +53,25 @@ class Tree {
 		System.out.println();
 	}
 
-	void swap(Node root, int depth) {
-		if (depth == 1) {
-			Node temp;
-			temp = root.left;
-			root.left = root.right;
-			root.right = temp;
-		} else {
-			swap(root.left, depth-1);
-			swap(root.right, depth-1);
-		}
+	void swap(Node root, int depth, int originalDepth) {
+		if (root != null) {
+            if (depth == 1) {
+                Node temp;
+                temp = root.left;
+                root.left = root.right;
+                root.right = temp;
+
+                swap(root.left, originalDepth, originalDepth);
+                swap(root.right, originalDepth, originalDepth);
+            } else {
+                swap(root.left, depth-1, originalDepth);
+                swap(root.right, depth-1, originalDepth);
+            }
+        }
 	}
 
 	void swapAtDepth(int depth) {
-		swap(this.nodes.get(1), depth);
+		swap(this.nodes.get(1), depth, depth);
 	}
 }
 

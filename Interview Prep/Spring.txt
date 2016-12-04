@@ -1,0 +1,100 @@
+- An open source development framework for Java.
+- Inversion Of Control
+- Aspect Oriented Programming model
+- Good Transaction Management API - JTA
+- Containers
+- MVC Framework
+- Exception Handling etc
+
+Spring IoC container takes care of wiring two components together.
+Spring IoC container takes care of Bean life cycle.
+
+Spring is popular because:
+- Its dependency injection encourages testable code
+- Provides prowerful database transaction management capabilities
+- Simplifies integration with other frameworks like JPA, Struts etc
+- Provides state of the art MVC framework for building web applications
+
+Spring sister projects
+- Spring Data
+- Spring Batch
+- Spring Security
+- Spring Social
+- Spring Integration
+
+Creating beans
+1. XML based configurations
+    beans.xml file
+2. Annotations
+    @Repository, @Controller, @Service etc
+3. Configuration class
+    @Bean inside @Configuration class
+
+Dependency Injection
+    - Remove hardcoded dependencies between classes
+        - Constructor based
+            - Used when we have mandatory dependencies
+        - Setter based
+            - Used in case of optional dependencies
+        - Field based
+
+    Uses of DI:
+        - Separation of concerns
+        - Reduce boilerplate code
+        - Easy unit testing
+
+Inversion of Control:
+    A method to achieve loose coupling between objects and dynamic binding
+
+Bean:
+    Any normal java class which is initialized, injecting any dependencies to it and
+    whose lifecycle is managed by Spring IoC container.
+
+An bean xml config contains
+    - bean definitions
+    - MVC interceptors
+    - view resolvers
+
+Beans scopes:
+    - @Scope
+    <bean name="..." class="...">
+        <attribute name="scope" value=""/>
+    </bean>
+    Types:
+        - Prototype
+        - Singleton
+        - Request
+        - Session
+        - Global-Session
+
+- Singleton beans are not thread safe
+
+- When context is destroyed, beans are destroyed.
+
+- Bean autowiring types
+    - ByName
+    - ByType
+    - Constructor
+    - @Autowired
+
+DispatcherServlet is the front controller in Spring MVC applications
+    - this delegates calls to other Controllers
+
+Creating Application Contexts in Spring
+1. AnnotationConfigApplicationContext
+2. ClassPathXmlApplicationContext
+3. FileSystemXmlApplicationContext
+
+- @Qualifier is used along with @Autowired, to remove the confusion when multiple
+    instances of a bean type are present
+
+Advantages of Spring Boot:
+- Not only the spring-boot-starter-web adds all these libraries but also configures the commonly
+registered beans like DispatcherServlet, ResourceHandlers, MessageSource etc beans with sensible defaults.
+
+- If we have added H2 database dependency in our pom.xml, then Spring Boot automatically
+creates DataSource, EntityManagerFactory, TransactionManager beans automatically.
+
+When including the spring boot dependency, if you want to use something else other that what Spring
+Boot provides, then just exclude it in dependency declaration and include the one you want. Spring
+Boot automatically takes this when setting up the things.

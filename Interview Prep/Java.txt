@@ -7,6 +7,7 @@
 4. If there is a constructor with arguments, then default constructor is not accessible.
 
 5. Constructors are not inherited.
+	- Constructors cannot be final.
 
 6. Static methods cannot refer to non-static variables.
 
@@ -89,7 +90,7 @@
 	- contains no data member and methods
 	- Serializable, Cloneable
 	- classes marked with marker interfaces are treated specially by the code of Java class library
-		(not the compiler or JVM).
+		(not the compiler or JRE).
 
 30. 					Abstract Class									Interface
 		- Can have non abstract methods					- Only abstract methods
@@ -141,14 +142,14 @@
 				single exception								the method can throw multiple exceptions
 			- followed by an instance						- followed by a class name
 
-39. An exception can be rethrown
+39. An exception can be rethrown.
 
 40. If a parent class method is not throwing an exception, a sub class can throw an exception but only
-	unchecked exception (refer InheritanceLearn.java, class C and D).
+	unchecked exception.
 
-41. Exception propogation
+41. Exception propogation.
 
-42. String immutable - value cannot be changed/modified
+42. String immutable - value cannot be changed/modified.
 
 43. Why strings are immutable in java ?
 	- java uses string literal concept where if there are 2 variables have the same value, then they both

@@ -159,12 +159,12 @@
 44. Why string literal concept?
 	- to make Java memory efficient
 
-45. String -> immutable, StringBuffer -> immutable
+45. String -> immutable, StringBuffer -> mutable
 	StringBuffer -> synchronized, StringBuilder -> not synchronized
 
 46. If you print any object, it calls toString() method of that object.
 
-47. What is the use of nested class or interfaces?
+47. What is the use of nested class or nested interfaces?
 	- When it makes no sense/no use to declare these objects outside.
 
 48. finalize method is invoked just before the object is garbage collected.
@@ -173,7 +173,7 @@
 	- resource cleanup
 
 50. Garbage collector thread is a daemon thread defined inside System class.
-	- it is used to send request to JVM to perform garbage collection.
+	- it is used to send request to JRE to perform garbage collection.
 
 51. final - finally - finalize
 
@@ -196,7 +196,7 @@
  	- new object is created and assigned to the new reference variable inside the class.
 
 57. wait and sleep?
- 	- wait is define in Object class, sleep is define in Thread class
+ 	- wait is defined in Object class, sleep is define in Thread class
  	- wait releases the lock, sleep doesn't release the lock
 
 58. We cannot start a thread twice. If we try, it throws an exception.

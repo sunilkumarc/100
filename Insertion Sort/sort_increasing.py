@@ -1,5 +1,5 @@
 a = [5, 4, 2, 6, 1, 8, 1]
-print(a)
+print('Original - ', a)
 
 for i in range(1, len(a)):
     key = a[i]
@@ -9,4 +9,4 @@ for i in range(1, len(a)):
         j = j -1
     a[j+1] = key
 
-print(a)
+print('Sorted - ', a)

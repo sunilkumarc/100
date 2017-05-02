@@ -8,7 +8,7 @@ def insertionSort(arr, start, end):
     j = end-1
     while j >= 0 and arr[j] > key:
         a[j+1] = a[j]
-        j = j -1
+        j = j-1
     a[j+1] = key
     return arr
 

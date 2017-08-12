@@ -9,29 +9,23 @@ def findPivot(arr):
 
 def findPair(arr, x):
     pivot = findPivot(arr)
+    arrSize = len(arr)
     if pivot != -1:
         start = pivot + 1
         end = pivot
-        while start < len(arr) and end >= 0:
-            currentSum = arr[start] + arr[end]
-            if currentSum == x:
-                return [start, end]
-            elif currentSum < x:
-                start += 1
-            else:
-                end -= 1
     else:
         start = 0
         end = len(arr) - 1
-        while start < end:
+
+    while start != end:
             currentSum = arr[start] + arr[end]
             if currentSum == x:
                 return [start, end]
             elif currentSum < x:
-                start += 1
+                start = (start + 1) % arrSize
             else:
-                end -= 1
-        
+                end = (arrSize + end - 1) % arrSize
+
     return None
 
 

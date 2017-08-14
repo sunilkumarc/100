@@ -1,0 +1,19 @@
+Complete binary tree:
+
+- height of a complete binary tree with n nodes -> floor of log(n)
+- All leaf nodes' index are in the range of -> |_ n/2 _| + 1 - n
+- Why can we represent binary heaps using any array?
+    because binary heaps are complete trees. So it is possible to represent them
+    using continue memory locations using an array
+
+Heapify
+    - we know that height of a heap is always log n since it a complete binary tree.
+    - So while heapifying an element at the root node, it can travel and become
+        a leaf node in worst case. This takes log n which is the height of the tree.
+        So since we are applying heapify for all non leaf nodes we might think that
+        the full time complexity should be n log n. But it can be proved that the
+        time complexity for heapifying the full tree is just n and not n log n.
+        The reason for this is because, heapifying is not log n at all levels. It descreases
+        as we come down the tree.
+
+Maxium number of nodes at height h in a complete binary tree is ceiling of n/2^(h+1)

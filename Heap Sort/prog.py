@@ -6,7 +6,7 @@ def heapify(arr, i, heap_size):
     if left < heap_size and arr[left] > arr[largest]:
         largest = left
 
-    elif right < heap_size and arr[right] > arr[largest]:
+    if right < heap_size and arr[right] > arr[largest]:
         largest = right
 
     if largest != i:

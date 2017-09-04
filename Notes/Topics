@@ -1,0 +1,16 @@
+Array Rotation 
+    Using reversal method
+    Juggling Algorithm
+
+Heapsort
+
+Finding smallest/largest K elements in array using Heapify
+
+Finding Kth smallest/largest element in sorted matrix
+
+Rotating a matrix
+
+Finding largest 3 elements - http://www.geeksforgeeks.org/find-the-largest-three-elements-in-an-array/
+    No need to use heap here. Since we know K, we can directly keep 3 variables 
+    and iterate through array and assing these var accordingly. Time complexity
+    here is n.

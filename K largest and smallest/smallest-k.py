@@ -1,5 +1,5 @@
 # Algorithm:
-# First build max heap in time complexity of n
+# First build min heap in time complexity of n
 # Then extract K numbers from this heap while heapifying after each retrival
 
 def buildMaxHeap(arr, index, heap_size):

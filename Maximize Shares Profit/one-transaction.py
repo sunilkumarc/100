@@ -1,4 +1,5 @@
 # To maximize profit using one transaction
+# https://www.youtube.com/watch?v=76-CYD0jn7s
 
 def maxProfit(arr, N):
     min_price = arr[0]

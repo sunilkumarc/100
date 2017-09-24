@@ -4,7 +4,28 @@
 
 import itertools
 
+def getNewList(nums):
+    myDict = dict()
+    for num in nums:
+        if num in myDict:
+            myDict[num] += 1
+        else:
+            myDict[num] = 1
+            
+    newList = []
+    for key in myDict:
+        newList.append(key)
+        if myDict[key] > 1:
+            newList.append(key)
+    
+    if 0 in myDict and myDict[0] > 2:
+        newList.append(0)
+    
+    return newList
+
 def findTriplets(nums, N):
+    nums = getNewList(nums)
+    print(nums)
     res = []
     nums.sort()
     N = len(nums)

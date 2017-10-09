@@ -1,5 +1,14 @@
 # https://leetcode.com/problems/subtree-of-another-tree/description/
 
+# Solution:
+# Postorder traversal of second tree should be present in postorder 
+# traversal of first tree
+
+# or
+
+# Inorder and Preorder traversal of second tree should be equal to
+# respective traversls of tree one
+
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, x):

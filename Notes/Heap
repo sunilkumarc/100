@@ -1,7 +1,7 @@
 Complete binary tree:
 
 - height of a complete binary tree with n nodes -> floor of log(n)
-- All leaf nodes' index are in the range of -> |_ n/2 _| + 1 - n
+- All leaf nodes' index are in the range of -> floor(n/2)+1 - n
 - Why can we represent binary heaps using any array?
     because binary heaps are complete trees. So it is possible to represent them
     using continue memory locations using an array

@@ -1,6 +1,8 @@
 # https://leetcode.com/problems/maximum-length-of-repeated-subarray/description/
-# INCOMPLETE - 37/54 passing
 
+################################################################
+#                   NORMAL WAY (Some test fail)
+################################################################
 def findSubarrays(arr):
     N = len(arr)
     res = []
@@ -22,10 +24,32 @@ def findMaxRepeatingSubarray(arr1, arr2):
 
     return None, -1
 
+################################################################
+#                   DYNAMIC PROGRAMMING
+################################################################
+def findLength(A, B):
+        A.insert(0, 0)
+        B.insert(0, 0)
+        m = len(A)
+        n = len(B)
+        maxLen = 0
+        
+        dp = [[0 for x in range(m)] for y in range(n)]
+        
+        for row in range(1, n):
+            for col in range(1, m):
+                if A[col] == B[row]:
+                    dp[row][col] = dp[row-1][col-1] + 1
+                    maxLen = max(maxLen, dp[row][col])
+        
+        return maxLen
+
+################################################################
 
 if __name__ == '__main__':
     arr1 = list(map(int, input().strip().split()))
     arr2 = list(map(int, input().strip().split()))
 
-    arr, len = findMaxRepeatingSubarray(arr1, arr2)
-    print(arr, len)
+    # arr, len = findMaxRepeatingSubarray(arr1, arr2)
+    maxLen = findLength(arr1, arr2)
+    print(maxLen)

@@ -1,3 +1,21 @@
+JDK = JRE + developer tools like javac, debugging tools etc.
+JRE = JVM + libraries(rt.jar) required to use inbuilt functionalities.
+JVM = converts bytecode into platform dependent instructions.
+
+C++ vs Java
+	- both are not purely object oriented languages. But java is more object oriented than
+	C++ since C++ supports structured programming.
+	- Java doesn't have pointer concept. So less error prone and more secure.
+
+Class Loader: Is something which searches classes for us. 3 types depending on where it searches
+	1. System Class Loader - loads classes from CLASSPATH (jar, war which are included in the classpath).
+	2. Extension Class Loader - loads from extension directory (ext, lib, jre).
+	3. Bootstrap Class Loader - loads Core Java files.
+
+	The order in which JRE asks loaders for classes is as mentioned above (as per the course)
+	But on oracle doc its mentioned as the other way - https://docs.oracle.com/javase/tutorial/ext/basics/load.html
+	NEED TO CLARIFY THIS
+
 1. Object reference which are declared as instance variable will be initialized to null - test2 is null;
 
 2. instance variable which are primitive types are initialized to 0, emptyString, 0.0 etc.

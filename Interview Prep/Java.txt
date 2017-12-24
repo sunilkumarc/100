@@ -80,7 +80,18 @@ StringBuilder is not thread safe.
 toString() - Better to use String.format() instead of + inside this method since format way
 	provides better performance.
 
+- Interfaces can extend other interfaces. 
+- Interface cannot extend classes!
 
+- We can provide default implementation for methods inside an interface from Java 8.
+
+public interface One {
+	void test();
+
+	default void test() {
+		System.out.println("This is default impl for test method");
+	}
+}
 
 1. Object reference which are declared as instance variable will be initialized to null - test2 is null;
 

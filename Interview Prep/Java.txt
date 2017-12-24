@@ -16,6 +16,72 @@ Class Loader: Is something which searches classes for us. 3 types depending on w
 	But on oracle doc its mentioned as the other way - https://docs.oracle.com/javase/tutorial/ext/basics/load.html
 	NEED TO CLARIFY THIS
 
+Why we need wrapper classes:
+	- provides utility functions
+	- null is a possible value whereas it is not allowed assign null to primitive types.
+	- can be added to collections. We can add primitive types to collections but under the hood
+		autoboxing happens and finally wrapper classes are added to collections.
+	- convert one type to another. Ex: Integer.parseInt()
+
+So what's the difference between below
+	1. Integer myInt = new Integer(10);
+	2. Integer myInt = Integer.valueOf("10");
+
+	1. Always return new object.
+	2. We might get a cached object
+		implementation:
+			public static Integer valueOf(int i) {
+				if (i >= IntegerCache.low && i <= IntegerCache.high)
+					return IntegerCache.cache[i + (-IntegerCache.low)];
+				return new Integer(i);
+			}
+
+	- wrapper classes are immutable
+
+Casting:
+	- Implicit: done by compiler. done when smaller type is assigned to bigger type. Ex: int to float. int to long.
+		int a = 10;
+		float b = a;
+
+	- Explicit: done by us. done when bigger type is assigned to smaller type. Ex: long to int.
+		float a = 10.10;
+		int b = (int) a;
+
+Autoboxing:
+	Integer a = 10; # internally Integer.valueOf() gets called.
+
+Integer a = new Integer(10);
+Integer b = new Integer(10);
+System.out.println(a == b); # FALSE
+
+Integer c = 10;
+Integer d = 10;
+System.out.println(c == d); # TRUE
+
+Strings:
+
+Where are string literals stored in memory?
+	- Java uses concept of string constant pool which is present on heap;
+	
+		String a = "one"; // Created on string constant pool since this is a string literal
+		String b = "one";
+		Strinc c = new String("Hello"); // Created on heap
+
+	In the above example when b is created, same string "one" which was created earlier in 
+		constants pool is reused.
+
+String objects are immutable. StringBuffer objects are mutable.
+Situations where a string is modified a number of times, then StringBuffer performs better.
+Both are thread safe.
+StringBuffer is made thread safe by using synchronized keyword.
+
+StringBuilder is not thread safe.
+
+toString() - Better to use String.format() instead of + inside this method since format way
+	provides better performance.
+
+
+
 1. Object reference which are declared as instance variable will be initialized to null - test2 is null;
 
 2. instance variable which are primitive types are initialized to 0, emptyString, 0.0 etc.

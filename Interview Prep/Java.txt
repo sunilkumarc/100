@@ -77,7 +77,7 @@ StringBuffer is made thread safe by using synchronized keyword.
 
 StringBuilder is not thread safe.
 
-toString() - Better to use String.format() instead of + inside this method since format way
+toString() - Better to use String.format() instead of + inside this method since the format way
 	provides better performance.
 
 - Interfaces can extend other interfaces. 
@@ -92,6 +92,40 @@ public interface One {
 		System.out.println("This is default impl for test method");
 	}
 }
+
+Classes should have low coupling and high cohesion.
+	Low Coupling: Dependency between classes.
+	
+	High Cohesion: Independency of classes. A class should do one thing.
+		- create different classes for parsing, making http calls and storing
+			into database.
+
+Inner Classes:
+1. Inner Class
+	- Can access instance variables of outside class
+	- Can only be created using instance of outer class variable.
+		Ex: OuterClass oc = new OuterClass();
+			InnerClass inc = oc.new InnerClass();
+
+2. Static Inner Class
+	- Can be created without an instance of outer class variable.
+	- Ex:
+		OuterClass.InnerClass ic = new OuterClass.InnerClass();
+	- Cannot access instance variables of outside class. Can access only static variables.
+
+3. Method Inner Class
+	- Can access instance variables of outer class and only final variables defined 
+		inside the outer method.
+
+4. Anonymous Inner Class
+	- Person p = new Person() {
+		void getId() {
+			return "testing";
+		}
+	}
+	We do not create a class because in this example Person is only useful in the current scope.
+	So we directly create a class Person and define method getId();
+	
 
 1. Object reference which are declared as instance variable will be initialized to null - test2 is null;
 

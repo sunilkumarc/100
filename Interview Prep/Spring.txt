@@ -15,12 +15,25 @@ Spring is popular because:
 - Simplifies integration with other frameworks like JPA, Struts etc
 - Provides state of the art MVC framework for building web applications
 
+Some of the benefits of using Dependency Injection are: 
+    Separation of Concerns, 
+    Boilerplate Code reduction, 
+    Configurable components and 
+    Easy unit testing.
+
+Java Dependency injection has some disadvantages too:
+    - If overused, it can lead to maintenance issues because effect of 
+        changes are known at runtime.
+
 Spring sister projects
 - Spring Data
 - Spring Batch
 - Spring Security
 - Spring Social
 - Spring Integration
+
+Spring Bea : Any normal java class that is initialized by Spring IoC container 
+    is called Spring Bean.
 
 Creating beans
 1. XML based configurations
@@ -29,6 +42,33 @@ Creating beans
     @Repository, @Controller, @Service etc
 3. Configuration class
     @Bean inside @Configuration class
+
+Different scopes of Spring Beans:
+- singleton
+- prototype
+- request
+- session
+- global-session
+
+<bean name="programmer" class="com.example.project.Programmer" scope="singleton">
+
+@Scope("singleton")
+class Programmer {
+
+}
+
+Types of Autowiring:
+- Constructor based
+    <bean name="employeeServiceByName" class="something.EmployeeService" autowire="constructor" />
+- By name
+    <bean name="employeeServiceByName" class="something.EmployeeService" autowire="byName" />
+- By type
+    <bean name="employeeServiceByName" class="something.EmployeeService" autowire="byType" />
+- @Annotation and @Qulifier
+    Using @Autowired on constructor method.
+
+Since by default scope of beans in singleton, Spring doesn't provide thread safety.
+So we can use either request, prototype or session scopes to make it thread safe.
 
 Dependency Injection
     - Remove hardcoded dependencies between classes

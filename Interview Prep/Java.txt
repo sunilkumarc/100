@@ -77,6 +77,9 @@ StringBuffer is made thread safe by using synchronized keyword.
 
 StringBuilder is not thread safe.
 
+Situations where only one thread is involved, StringBuilder performs better since it performs
+no synchronization.
+
 toString() - Better to use String.format() instead of + inside this method since the format way
 	provides better performance.
 
@@ -113,7 +116,7 @@ Inner Classes:
 		OuterClass.InnerClass ic = new OuterClass.InnerClass();
 	- Cannot access instance variables of outside class. Can access only static variables.
 
-3. Method Inner Class
+3. Method Inner Classx
 	- Can access instance variables of outer class and only final variables defined 
 		inside the outer method.
 
@@ -125,7 +128,7 @@ Inner Classes:
 	}
 	We do not create a class because in this example Person is only useful in the current scope.
 	So we directly create a class Person and define method getId();
-	
+
 
 1. Object reference which are declared as instance variable will be initialized to null - test2 is null;
 
@@ -208,8 +211,8 @@ Inner Classes:
 	- Cannot be instantiated, can be inherited.
 
 27. Interface - contains
-	- static final constants
-	- abstract methods
+	- by default all variable are static final.
+	- abstract methods.
 
 	- helps in complete abstraction and multiple inheritance
 
@@ -309,9 +312,9 @@ Inner Classes:
 52. Reader/Writer class hierarchy -> character oriented
 	InputStream/OutputStream class hierarchy -> byte oriented
 
-53. Serialization
-	- writing the state of an object into a byte stream. Basically to send it over the network.
-	Deserialization is opposite
+53. Serialization : Writing the state of an object into a byte stream. 
+	Basically to send it over the network or write into a file etc.
+	- Deserialization is opposite. 
 
 54. Wrapper Classes - classes that allow primitive types to be accessed as objects.
 
